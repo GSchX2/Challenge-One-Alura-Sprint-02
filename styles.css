@@ -17,6 +17,7 @@
 
     --texto-cor-banner: white;
     --texto-cor-escura: #464646;
+    --texto-cor-clara: #a2a2a2;
     --texto-cor-colorida: #2a7ae4;
 
     --font-tamanho-titulo-grande: 5.2rem;
@@ -82,7 +83,7 @@
 }
 
 .cabecalho__pesquisa-input::placeholder {
-    color: #A2A2A2;
+    color: var(--texto-cor-clara);
 }
 
 .cabecalho__pesquisa-input,
@@ -157,8 +158,13 @@
     margin-bottom: 0.8rem;
 }
 
-.banner__link {
+/*##################    botao    ###################*/
+
+.botao {
+    align-self: flex-start;
     background-color: var(--botao-cor);
+    border: none;
+    color: var(--botao-texto-cor);
     font-size: var(--font-tamanho-pequeno);
     font-weight: var(--font-espessura-media-grossa);
     line-height: 1.6rem;
@@ -166,7 +172,7 @@
     padding-inline: 1.6rem;
 }
 
-.banner__link:hover {
+.botao:hover {
     background-color: var(--botao-cor-hover);
 }
 
@@ -201,7 +207,11 @@
     font-size: var(--font-tamanho-pequeno);
     font-weight: var(--font-espessura-grossa);
     line-height: 1.6rem;
-    padding-right: 0.4rem;
+    
+}
+
+.produtos__categoria-link > svg {
+    margin-left: 0.4rem;
 }
 
 .produtos__lista-produtos {
@@ -245,6 +255,119 @@
     display: block;
     font-weight: var(--font-espessura-grossa);
 }
+
+/*##################    footer    ##################
+####################################################*/
+
+.rodape__conteudo {
+    align-items: center;
+    background-color: var(--bg-up-footer);
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+    padding-block: 1.6rem;
+}
+
+.rodape__wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+}
+
+.rodape__logo {
+    height: 5rem;
+    width: 17.6rem;
+}
+
+.rodape__links {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 19.4rem;
+}
+
+.rodape__link {
+    color: var(--texto-cor-escura);
+    font-size: var(--font-tamanho-medio);
+    font-weight: var(--font-espessura-media);
+    line-height: 1.9rem;
+    text-align: center;
+}
+
+.rodape__form {
+    width: 100%;
+}
+
+.rodape__form-contato {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-contato__titulo {
+    color: var(--texto-cor-escura);
+    font-size: var(--font-tamanho-medio);
+    font-weight: var(--font-espessura-grossa);
+    line-height: 1.9rem;
+    margin-bottom: 0.8rem;
+}
+
+.form-contato__inputNameBox {
+    background-color: white;
+    border-bottom: 1px solid #c8c8c8;
+    margin-bottom: 1.6rem;
+    padding-block: 0.8rem;
+}
+
+.form-contato__labelInputName {
+    color: var(--texto-cor-clara);
+    font-size: 1.2rem;
+    font-weight: var(--font-espessura-regular);
+    line-height: 1.6rem;
+    padding-left: 1.2rem;
+}
+
+.form-contato__inputName,
+.form-contato__inputMensagem {
+    border: none;
+    color: var(--texto-cor-escura);
+    display: block;
+    font-size: var(--font-tamanho-medio);
+    font-weight: var(--font-espessura-regular);
+    line-height: 2rem;
+    margin-top: 0.4rem;
+    width: 100%;
+}
+
+.form-contato__inputMensagem {
+    border-bottom: 1px solid #c8c8c8;
+    padding-top: 1.6rem;
+    margin-bottom: 0.8rem;
+    height: 8.2rem;
+}
+
+.form-contato__inputMensagem::placeholder,
+.form-contato__inputName::placeholder {
+    color: var(--texto-cor-clara);
+}
+
+input,
+textarea {
+    font-family: 'Raleway', sans-serif;
+    outline: none;
+    resize: none;
+    padding-left: 1.2rem;
+}
+
+.rodape__desenvolvedor {
+    background-color: var(--bg-cor-down-footer);
+    color: var(--texto-cor-escura);
+    font-size: var(--font-tamanho-medio);
+    font-weight: var(--font-espessura-media);
+    line-height: normal;
+    padding: 3.2rem;
+    text-align: center;
+}
+
 
 @media screen and (min-width: 768px) {
     .container {
@@ -325,6 +448,27 @@
         line-height: 1.9rem;
     }
 
+    .rodape__conteudo {
+        align-items: flex-start;
+        gap: 1.6rem;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 36.4rem;
+        padding-block: 3.2rem;
+    }
+
+    .rodape__links {
+        height: 23.4rem;
+    }
+
+    .rodape__link {
+        text-align: left;
+    }
+
+    .rodape__form {
+        width: 60%;
+    }
+
 }
 
 @media screen and (min-width: 1440px) {
@@ -376,11 +520,25 @@
     }
     
     .produto__item {
-        border: 1px solid red;
         width: calc(16.66% - 1.34rem);
     }
     
     .produto__item--large-view {
         display: block;
+    }
+
+    .rodape__conteudo {
+        gap: 6.4rem;
+        padding-block: 6.4rem;
+    }
+
+    .rodape__wrap {
+        flex-direction: row;
+        gap: 11.2rem;
+        width: 50%;
+    }
+
+    .rodape__form {
+        width: 50%;
     }
 }

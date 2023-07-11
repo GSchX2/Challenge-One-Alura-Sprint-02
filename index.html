@@ -42,7 +42,7 @@
     <section class="banner container">
       <h2 class="banner__titulo">Dezembro Promocional</h2>
       <p class="banner__texto">Produtos selecionados com 33% de desconto</p>
-      <a href="#" class="banner__link">Ver Consoles</a>
+      <a href="#" class="botao">Ver Consoles</a>
     </section>
     <section class="produtos container">
       <div class="produtos__wrap">
@@ -219,27 +219,33 @@
     </section>
   </main>
   <footer class="rodape">
-    <img src="img/Logo.png" alt="Logo AluraGeek" class="rodape__logo">
-    <nav>
-      <ul class="rodape__links">
-        <li><a href="#" class="rodape__link">Quem somos nós</a></li>
-        <li><a href="#" class="rodape__link">Política de privacidade</a></li>
-        <li><a href="#" class="rodape__link">Programa fidelidade</a></li>
-        <li><a href="#" class="rodape__link">Nossas lojas</a></li>
-        <li><a href="#" class="rodape__link">Quero ser franqueado</a></li>
-        <li><a href="#" class="rodape__link">Anuncie aqui</a></li>
-      </ul>
-    </nav>
-    <form class="rodape__form-contato">
-      <fieldset>
-        <legend class="form-contato__titulo">Fale conosco</legend>
-        <label for="name" class="form-contato__labelInputName">Nome</label>
-        <input class="form-contato__inputName" id="name" type="text" placeholder="Escreva seu nome">
-        <textarea class="form-contato__inputmensagem" type="text" placeholder="Escreva sua mensagem"></textarea>
-        <button class="form_contato__botao">Enviar mensagem</button>
-      </fieldset>
-    </form>
-    <p class="rodape__desenvolvedor">Desenvolvido por Guilherme 2023</p>
+    <div class="rodape__conteudo container">
+      <div class="rodape__wrap">
+        <img src="img/Logo.png" alt="Logo AluraGeek" class="rodape__logo">
+        <nav>
+          <ul class="rodape__links">
+            <li class="rodape__link"><a href="#">Quem somos nós</a></li>
+            <li class="rodape__link"><a href="#">Política de privacidade</a></li>
+            <li class="rodape__link"><a href="#">Programa fidelidade</a></li>
+            <li class="rodape__link"><a href="#">Nossas lojas</a></li>
+            <li class="rodape__link"><a href="#">Quero ser franqueado</a></li>
+            <li class="rodape__link"><a href="#">Anuncie aqui</a></li>
+          </ul>
+        </nav>
+      </div>
+      <form action="#" class="rodape__form">
+        <fieldset class="rodape__form-contato">
+          <legend class="form-contato__titulo">Fale conosco</legend>
+          <div class="form-contato__inputNameBox">
+            <label for="name" class="form-contato__labelInputName">Nome</label>
+            <input class="form-contato__inputName" id="name" type="text" placeholder="Escreva seu nome">
+          </div>
+          <textarea class="form-contato__inputMensagem" type="text" placeholder="Escreva sua mensagem"></textarea>
+          <button class="botao">Enviar mensagem</button>
+        </fieldset>
+      </form>
+    </div>
+    <p class="rodape__desenvolvedor">Desenvolvido por Guilherme<br>2023</p>
   </footer>
   <script src="index.js"></script>
 </body>
