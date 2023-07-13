@@ -1,0 +1,186 @@
+.banner {
+    align-items: flex-start;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), 
+        linear-gradient(180deg, rgba(0, 0, 0, 0.00) 41.15%, rgba(0, 0, 0, 0.80) 100%), 
+        url("../img/banner.jpg") center / cover no-repeat;
+    color: var(--texto-cor-banner);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-block: 1.6rem;
+    height: 19.2rem;
+}
+
+.banner__titulo {
+    font-size: var(--font-tamanho-grande);
+    font-weight: var(--font-espessura-grossa);
+    line-height: 2.6rem;
+    margin-bottom: 0.8rem;
+}
+
+.banner__texto {
+    font-size: var(--font-tamanho-pequeno);
+    font-weight: var(--font-espessura-media-grossa);
+    line-height: 1.6rem;
+    margin-bottom: 0.8rem;
+}
+
+.produtos {
+    background-color: var(--bg-body);
+}
+
+.produtos__wrap {
+    padding-block: 1.6rem;
+}
+
+.produtos__categoria {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.produtos__categoria-titulo {
+    color: var(--texto-cor-escura);
+    font-size: var(--font-tamanho-grande);
+    font-weight: var(--font-espessura-grossa);
+    line-height: 2.6rem;
+}
+
+.produtos__categoria-link {
+    align-items: center;
+    color: var(--texto-cor-colorida);
+    display: flex;
+    font-size: var(--font-tamanho-pequeno);
+    font-weight: var(--font-espessura-grossa);
+    line-height: 1.6rem;
+    
+}
+
+.produtos__categoria-link > svg {
+    margin-left: 0.4rem;
+}
+
+.produtos__lista-produtos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.6rem;
+    padding-top: 1.6rem;
+}
+
+.produto__item {
+    color: var(--texto-cor-escura);
+    font-weight: var(--font-espessura-media);
+    width: calc(50% - 0.8rem);
+}
+
+.produto__item--large-view {
+    display: none;
+}
+
+.produto__imagem {
+    width: 100%;
+    height: auto;
+}
+
+.produto__nome,
+.produto__link {
+    font-size: var(--font-tamanho-pequeno);
+    line-height: 1.6rem;
+    margin-top: 0.8rem
+}
+
+.produto__preco {
+    font-size: var(--font-tamanho-medio);
+    font-weight: var(--font-espessura-grossa);
+    line-height: 1.9rem;
+    margin-top: 0.8rem;
+}
+
+.produto__link {
+    color: var(--texto-cor-colorida);
+    display: block;
+    font-weight: var(--font-espessura-grossa);
+}
+
+
+@media screen and (min-width: 768px) {
+    .banner {
+        padding-block: 3.2rem;
+        height: 35.2rem;
+    }
+
+    .banner__titulo {
+        font-size: var(--font-tamanho-titulo-grande);
+        font-weight: var(--font-espessura-grossa);
+        line-height: 6.1rem;
+        margin-bottom: 1.6rem;
+    }
+    
+    .banner__texto {
+        font-size: var(--font-tamanho-grande);
+        font-weight: var(--font-espessura-grossa);
+        line-height: 2.6rem;
+        margin-bottom: 1.6rem;
+    }
+    
+    .banner__link {
+        font-size: var(--font-tamanho-pequeno);
+        font-weight: var(--font-espessura-grossa);
+        line-height: 1.6rem;
+        padding-block: 1.2rem;
+        padding-inline: 1.6rem;
+    }
+
+    .produtos__wrap {
+        padding-block: 3.2rem;
+    }
+
+    .produtos__categoria-link {
+        font-size: var(--font-tamanho-medio);
+        line-height: 1.9rem;
+    }
+
+    .produtos__lista-produtos {
+        padding-top: 1.6rem;
+    }
+
+    .produto__item {
+        width: calc(25% - 1.2rem);
+    }
+
+    .produto__link {
+        font-size: var(--font-tamanho-medio);
+        line-height: 1.9rem;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .banner__link {
+        font-size: var(--font-tamanho-medio);
+        font-weight: var(--font-espessura-regular);
+        line-height: 1.6rem;
+        padding-block: 1.2rem;
+        padding-inline: 1.6rem;
+    }
+
+    .produtos__wrap {
+        padding-top: 6.4rem;
+        padding-bottom: 0;
+    }
+
+    .produtos__wrap:last-child {
+        padding-block: 6.4rem;
+    }
+
+    .produtos__categoria-titulo {
+        font-size: var(--font-tamanho-titulo-medio);
+    }
+    
+    .produto__item {
+        width: calc(16.66% - 1.34rem);
+    }
+    
+    .produto__item--large-view {
+        display: block;
+    }
+}

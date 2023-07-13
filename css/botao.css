@@ -1,0 +1,26 @@
+.botao {
+    align-self: flex-start;
+    background-color: var(--botao-cor);
+    border: none;
+    color: var(--botao-texto-cor);
+    cursor: pointer;
+    /* font-family: 'Raleway', sans-serif; */
+    font-size: var(--font-tamanho-pequeno);
+    font-weight: var(--font-espessura-media-grossa);
+    line-height: 1.6rem;
+    padding-block: 1.2rem;
+    padding-inline: 1.6rem;
+}
+
+.botao:hover {
+    background-color: var(--botao-cor-hover);
+}
+
+
+@media screen and (min-width: 1440px) {
+    .botao {
+        font-size: var(--font-tamanho-medio);
+        font-weight: var(--font-espessura-regular);
+        padding: 1.6rem;
+    }
+}

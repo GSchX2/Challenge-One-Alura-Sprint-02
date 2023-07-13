@@ -1,0 +1,141 @@
+.cabecalho {
+    align-items: center;
+    background-color: var(--bg-cor-header);
+    display: flex;
+    justify-content: space-between;
+    padding-block: 1.6rem;
+    height: 7.2rem;
+}
+
+.cabecalho__logo {
+    margin-right: 3.2rem;
+    height: 2.8rem;
+    width: 10rem;
+}
+
+.cabecalho__pesquisa {
+    align-items: center;
+    background-color: var(--bg-cor-pesquisa);
+    border: none;
+    border-radius: 4rem;
+    color: var(--texto-cor-escura);
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--font-tamanho-pequeno);
+    padding-block: 0.8rem;
+    padding-inline: 1.6rem;
+    height: 4rem;
+}
+
+.cabecalho__pesquisa--branco {
+    background-color: var(--bg-cor-header);
+}
+
+.cabecalho__pesquisa-input {
+    flex: 1;
+    line-height: 1.6rem;
+}
+
+.cabecalho__pesquisa-input::placeholder {
+    color: var(--texto-cor-clara);
+}
+
+.cabecalho__pesquisa-input,
+.cabecalho__pesquisa-botao {
+    border: none;
+    background-color: var(--bg-cor-pesquisa);
+}
+
+.cabecalho__pesquisa-input--branco,
+.cabecalho__pesquisa-botao--branco {
+    background-color: var(--bg-cor-header);
+}
+
+.cabecalho__pesquisa-botao {
+    cursor: pointer;
+}
+
+.cabecalho__link {
+    color: var(--botao-negativo-texto-cor);
+    border: 1px solid var(--botao-negativo-texto-cor);
+    font-size: var(--font-tamanho-pequeno);
+    font-weight: var(--font-espessura-media-grossa);
+    padding-block: 1.2rem;
+    padding-inline: 1.6rem;
+    text-align: center;
+    width: 10rem;
+}
+
+.cabecalho__link:hover {
+    background-color: var(--botao-negativo-cor-hover);
+}
+
+.cabecalho__botao-mostra-pesquisa {
+    background-color: var(--bg-cor-header);
+    border: none;
+    cursor: pointer;
+}
+
+.cabecalho__pesquisa--media-grande-view, 
+.cabecalho__pesquisa--pequena-view-esconder {
+    display: none;
+}
+
+.cabecalho__pesquisa--pequena-view-mostrar {
+    position: absolute;
+    top: 7.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+}
+
+
+@media screen and (min-width: 768px) {
+    .cabecalho__wrap-logo-pesquisa {
+        align-items: center;
+        display: flex;
+        width: 40.4rem;
+    }
+
+    .cabecalho__pesquisa {
+        width: 100%;
+    }
+
+    .cabecalho__pesquisa--media-grande-view {
+        display: flex;
+        justify-self: start;
+    }
+
+    .cabecalho__pesquisa--pequena-view-esconder,
+    .cabecalho__pesquisa--pequena-view-mostrar,
+    .cabecalho__botao-mostra-pesquisa {
+        display: none;
+    }
+
+    .cabecalho__login {
+        width: 13.4rem;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .cabecalho {
+        padding-block: 3.2rem;
+        height: 11.4rem;
+    }
+
+    .cabecalho__logo {
+        height: 5rem;
+        width: 17.6rem;
+    }
+
+    .cabecalho__wrap-logo-pesquisa {
+        width: 60.1rem;
+    }
+
+    .cabecalho__login {
+        font-size: var(--font-tamanho-medio);
+        font-weight: var(--font-espessura-regular);
+        padding-block: 1.6rem;
+        width: 15rem;
+    }
+}

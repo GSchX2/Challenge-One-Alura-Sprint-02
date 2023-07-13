@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>AluraGeek</title>
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/cabacalho.css">
+  <link rel="stylesheet" href="/css/rodape.css">
+  <link rel="stylesheet" href="/css/botao.css">
+  <link rel="stylesheet" href="/css/login-main.css">
+</head>
+<body>
+  <header>
+    <div class="cabecalho container">
+      <a href="index.html">
+        <img src="img/Logo.png" alt="Logo AluraGeek" class="cabecalho__logo">
+      </a>  
+    </div>
+  </header>
+  <main>
+   <form class="login container">
+    <fieldset class="login__fieldset">
+      <h2 class="login__titulo">Iniciar Sessão</h2>
+      <input type="email" class="login__input" id="email" placeholder="Escreva seu email" required title="Email">
+      <input type="password" class="login__input" id="senha" placeholder="Escreva sua senha" minlength="6" title="Senha">
+      <button class="botao botao--mutavel botao--bold">Entrar</button>
+    </fieldset>
+   </form>
+  </main>
+  <footer class="rodape">
+    <div class="rodape__conteudo container">
+      <div class="rodape__wrap">
+        <img src="img/Logo.png" alt="Logo AluraGeek" class="rodape__logo">
+        <nav>
+          <ul class="rodape__links">
+            <li class="rodape__link"><a href="#">Quem somos nós</a></li>
+            <li class="rodape__link"><a href="#">Política de privacidade</a></li>
+            <li class="rodape__link"><a href="#">Programa fidelidade</a></li>
+            <li class="rodape__link"><a href="#">Nossas lojas</a></li>
+            <li class="rodape__link"><a href="#">Quero ser franqueado</a></li>
+            <li class="rodape__link"><a href="#">Anuncie aqui</a></li>
+          </ul>
+        </nav>
+      </div>
+      <form class="rodape__form">
+        <fieldset class="rodape__form-contato">
+          <legend class="form-contato__titulo">Fale conosco</legend>
+          <div class="form-contato__inputNameBox">
+            <label for="name" class="form-contato__labelInputName">Nome</label>
+            <input class="form-contato__inputName" id="name" type="text" placeholder="Escreva seu nome" required>
+          </div>
+          <textarea class="form-contato__inputMensagem" type="text" placeholder="Escreva sua mensagem" required></textarea>
+          <button class="botao">Enviar mensagem</button>
+        </fieldset>
+      </form>
+    </div>
+    <p class="rodape__desenvolvedor">Desenvolvido por Guilherme<br>2023</p>
+  </footer>
+  <script src="js/index.js"></script>
+</body>
+</html>

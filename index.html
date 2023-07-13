@@ -4,18 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
   <title>AluraGeek</title>
-  <link rel="stylesheet" href="reset.css">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/index-main.css">
+  <link rel="stylesheet" href="/css/cabacalho.css">
+  <link rel="stylesheet" href="/css/rodape.css">
+  <link rel="stylesheet" href="/css/botao.css">
 </head>
 <body>
   <header class="cabecalho container">
     <div class="cabecalho__wrap-logo-pesquisa">
-      <img src="img/Logo.png" alt="Logo AluraGeek" class="cabecalho__logo">
-      <form action="#" class="cabecalho__pesquisa cabecalho__pesquisa--media-grande-view">
-        <input type="text" class="cabecalho__pesquisa-input" placeholder="O que deseja encontrar?">
+      <a href="index.html"><img src="img/Logo.png" alt="Logo AluraGeek" class="cabecalho__logo"></a>
+      <form class="cabecalho__pesquisa cabecalho__pesquisa--media-grande-view">
+        <input type="text" class="cabecalho__pesquisa-input" placeholder="O que deseja encontrar?" required>
         <button class="cabecalho__pesquisa-botao">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
             <path d="M15.5001 14H14.7101L14.4301 13.73C15.6301 12.33 16.2501 10.42 15.9101 8.39002C15.4401 5.61002 13.1201 3.39002 10.3201 3.05002C6.09014 2.53002 2.53014 6.09001 3.05014 10.32C3.39014 13.12 5.61014 15.44 8.39014 15.91C10.4201 16.25 12.3301 15.63 13.7301 14.43L14.0001 14.71V15.5L18.2501 19.75C18.6601 20.16 19.3301 20.16 19.7401 19.75C20.1501 19.34 20.1501 18.67 19.7401 18.26L15.5001 14ZM9.50014 14C7.01014 14 5.00014 11.99 5.00014 9.50002C5.00014 7.01002 7.01014 5.00002 9.50014 5.00002C11.9901 5.00002 14.0001 7.01002 14.0001 9.50002C14.0001 11.99 11.9901 14 9.50014 14Z" fill="#A2A2A2"/>
@@ -23,14 +27,14 @@
         </button>
       </form>
     </div>
-    <a href="#" class="cabecalho__login">Login</a>
+    <a href="login.html" class="cabecalho__link">Login</a>
     <button class="cabecalho__botao-mostra-pesquisa">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
         <path d="M15.5001 14H14.7101L14.4301 13.73C15.6301 12.33 16.2501 10.42 15.9101 8.39002C15.4401 5.61002 13.1201 3.39002 10.3201 3.05002C6.09014 2.53002 2.53014 6.09001 3.05014 10.32C3.39014 13.12 5.61014 15.44 8.39014 15.91C10.4201 16.25 12.3301 15.63 13.7301 14.43L14.0001 14.71V15.5L18.2501 19.75C18.6601 20.16 19.3301 20.16 19.7401 19.75C20.1501 19.34 20.1501 18.67 19.7401 18.26L15.5001 14ZM9.50014 14C7.01014 14 5.00014 11.99 5.00014 9.50002C5.00014 7.01002 7.01014 5.00002 9.50014 5.00002C11.9901 5.00002 14.0001 7.01002 14.0001 9.50002C14.0001 11.99 11.9901 14 9.50014 14Z" fill="#464646"/>
       </svg>
     </button>
-    <form action="#" class="cabecalho__pesquisa cabecalho__pesquisa--pequena-view-esconder">
-      <input type="text" class="cabecalho__pesquisa-input" placeholder="O que deseja encontrar?">
+    <form class="cabecalho__pesquisa cabecalho__pesquisa--pequena-view-esconder">
+      <input type="text" class="cabecalho__pesquisa-input" placeholder="O que deseja encontrar?" required>
       <button class="cabecalho__pesquisa-botao">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
           <path d="M15.5001 14H14.7101L14.4301 13.73C15.6301 12.33 16.2501 10.42 15.9101 8.39002C15.4401 5.61002 13.1201 3.39002 10.3201 3.05002C6.09014 2.53002 2.53014 6.09001 3.05014 10.32C3.39014 13.12 5.61014 15.44 8.39014 15.91C10.4201 16.25 12.3301 15.63 13.7301 14.43L14.0001 14.71V15.5L18.2501 19.75C18.6601 20.16 19.3301 20.16 19.7401 19.75C20.1501 19.34 20.1501 18.67 19.7401 18.26L15.5001 14ZM9.50014 14C7.01014 14 5.00014 11.99 5.00014 9.50002C5.00014 7.01002 7.01014 5.00002 9.50014 5.00002C11.9901 5.00002 14.0001 7.01002 14.0001 9.50002C14.0001 11.99 11.9901 14 9.50014 14Z" fill="#A2A2A2"/>
@@ -48,7 +52,7 @@
       <div class="produtos__wrap">
         <div class="produtos__categoria">
           <h2 class="produtos__categoria-titulo">Star Wars</h2>
-          <a href="#" class="produtos__categoria-link">Ver tudo
+          <a href="produtos.html" class="produtos__categoria-link">Ver tudo
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
               <g clip-path="url(#clip0_166_2677)">
                 <path d="M2.66634 8.66665L10.7797 8.66665L7.05301 12.3933L7.99967 13.3333L13.333 7.99998L7.99968 2.66665L7.05968 3.60665L10.7797 7.33331L2.66634 7.33331L2.66634 8.66665Z" fill="#2A7AE4"/>
@@ -105,7 +109,7 @@
       <div class="produtos__wrap">
         <div class="produtos__categoria">
           <h2 class="produtos__categoria-titulo">Consoles</h2>
-          <a href="#" class="produtos__categoria-link">Ver tudo
+          <a href="produtos.html" class="produtos__categoria-link">Ver tudo
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
               <g clip-path="url(#clip0_166_2677)">
                 <path d="M2.66634 8.66665L10.7797 8.66665L7.05301 12.3933L7.99967 13.3333L13.333 7.99998L7.99968 2.66665L7.05968 3.60665L10.7797 7.33331L2.66634 7.33331L2.66634 8.66665Z" fill="#2A7AE4"/>
@@ -162,7 +166,7 @@
       <div class="produtos__wrap">
         <div class="produtos__categoria">
           <h2 class="produtos__categoria-titulo">Diversos</h2>
-          <a href="#" class="produtos__categoria-link">Ver tudo
+          <a href="produtos.html" class="produtos__categoria-link">Ver tudo
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
               <g clip-path="url(#clip0_166_2677)">
                 <path d="M2.66634 8.66665L10.7797 8.66665L7.05301 12.3933L7.99967 13.3333L13.333 7.99998L7.99968 2.66665L7.05968 3.60665L10.7797 7.33331L2.66634 7.33331L2.66634 8.66665Z" fill="#2A7AE4"/>
@@ -233,20 +237,20 @@
           </ul>
         </nav>
       </div>
-      <form action="#" class="rodape__form">
+      <form class="rodape__form">
         <fieldset class="rodape__form-contato">
           <legend class="form-contato__titulo">Fale conosco</legend>
           <div class="form-contato__inputNameBox">
             <label for="name" class="form-contato__labelInputName">Nome</label>
-            <input class="form-contato__inputName" id="name" type="text" placeholder="Escreva seu nome">
+            <input class="form-contato__inputName" id="name" type="text" placeholder="Escreva seu nome" required>
           </div>
-          <textarea class="form-contato__inputMensagem" type="text" placeholder="Escreva sua mensagem"></textarea>
+          <textarea class="form-contato__inputMensagem" id="mensagem" type="text" placeholder="Escreva sua mensagem" required></textarea>
           <button class="botao">Enviar mensagem</button>
         </fieldset>
       </form>
     </div>
     <p class="rodape__desenvolvedor">Desenvolvido por Guilherme<br>2023</p>
   </footer>
-  <script src="index.js"></script>
+  <script src="js/index.js"></script>
 </body>
 </html>
