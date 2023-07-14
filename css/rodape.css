@@ -1,6 +1,6 @@
 .rodape__conteudo {
     align-items: center;
-    background-color: var(--bg-up-footer);
+    background-color: var(--bg-cor-up-footer);
     display: flex;
     flex-direction: column;
     gap: 3.2rem;
@@ -59,7 +59,7 @@
 
 .form-contato__labelInputName {
     color: var(--texto-cor-clara);
-    font-size: 1.2rem;
+    font-size: var(--font-tamanho-muito-pequena);
     font-weight: var(--font-espessura-regular);
     line-height: 1.6rem;
     padding-left: 1.2rem;

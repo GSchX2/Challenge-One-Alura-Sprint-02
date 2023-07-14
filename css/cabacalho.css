@@ -60,10 +60,14 @@
     border: 1px solid var(--botao-negativo-texto-cor);
     font-size: var(--font-tamanho-pequeno);
     font-weight: var(--font-espessura-media-grossa);
+    line-height: normal;
     padding-block: 1.2rem;
     padding-inline: 1.6rem;
     text-align: center;
-    width: 10rem;
+}
+
+.cabecalho__link--pequeno {
+    width: 13.2rem;
 }
 
 .cabecalho__link:hover {
@@ -112,8 +116,8 @@
         display: none;
     }
 
-    .cabecalho__login {
-        width: 13.4rem;
+    .cabecalho__link--pequeno {
+        width: 16.6rem;
     }
 }
 
@@ -132,10 +136,14 @@
         width: 60.1rem;
     }
 
-    .cabecalho__login {
+    .cabecalho__link {
         font-size: var(--font-tamanho-medio);
         font-weight: var(--font-espessura-regular);
-        padding-block: 1.6rem;
-        width: 15rem;
+        line-height: 1.9rem;
+        padding: 1.6rem;
+    }
+
+    .cabecalho__link--pequeno {
+        width: 18.2rem;
     }
 }

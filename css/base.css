@@ -3,8 +3,8 @@
     
     --bg-cor-header: white;
     --bg-cor-pesquisa: #f5f5f5;
-    --bg-body: #f5f5f5;
-    --bg-up-footer: #eaf2fd;
+    --bg-cor-body: #f5f5f5;
+    --bg-cor-up-footer: #eaf2fd;
     --bg-cor-down-footer: white;
 
     --botao-cor: var(--texto-cor-colorida);
@@ -24,6 +24,7 @@
     --font-tamanho-grande: 2.2rem;
     --font-tamanho-medio: 1.6rem;
     --font-tamanho-pequeno: 1.4rem;
+    --font-tamanho-muito-pequena: 1.2rem;
 
     --font-espessura-regular: 400;
     --font-espessura-media: 500;

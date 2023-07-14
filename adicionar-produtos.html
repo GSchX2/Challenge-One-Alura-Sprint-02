@@ -6,7 +6,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <title>AluraGeek</title>
+  <title>AluraGeek - Adicionar produtos</title>
   <link rel="stylesheet" href="/css/reset.css">
   <link rel="stylesheet" href="/css/base.css">
   <link rel="stylesheet" href="/css/adicionar-produtos-main.css">
@@ -27,23 +27,45 @@
         </button>
       </form>
     </div>
-    <a href="produtos.html" class="cabecalho__link">Menu Administrador</a>
+    <a href="produtos.html" class="cabecalho__link">Menu administrador</a>
     <button class="cabecalho__botao-mostra-pesquisa">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
         <path d="M15.5001 14H14.7101L14.4301 13.73C15.6301 12.33 16.2501 10.42 15.9101 8.39002C15.4401 5.61002 13.1201 3.39002 10.3201 3.05002C6.09014 2.53002 2.53014 6.09001 3.05014 10.32C3.39014 13.12 5.61014 15.44 8.39014 15.91C10.4201 16.25 12.3301 15.63 13.7301 14.43L14.0001 14.71V15.5L18.2501 19.75C18.6601 20.16 19.3301 20.16 19.7401 19.75C20.1501 19.34 20.1501 18.67 19.7401 18.26L15.5001 14ZM9.50014 14C7.01014 14 5.00014 11.99 5.00014 9.50002C5.00014 7.01002 7.01014 5.00002 9.50014 5.00002C11.9901 5.00002 14.0001 7.01002 14.0001 9.50002C14.0001 11.99 11.9901 14 9.50014 14Z" fill="#464646"/>
       </svg>
     </button>
-    <form class="cabecalho__pesquisa cabecalho__pesquisa--pequena-view-esconder">
-      <input type="text" class="cabecalho__pesquisa-input" placeholder="O que deseja encontrar?" required>
-      <button class="cabecalho__pesquisa-botao">
+    <form class="cabecalho__pesquisa cabecalho__pesquisa--branco cabecalho__pesquisa--pequena-view-esconder">
+      <input type="text" class="cabecalho__pesquisa-input cabecalho__pesquisa-input--branco" placeholder="O que deseja encontrar?" required>
+      <button class="cabecalho__pesquisa-botao cabecalho__pesquisa-botao--branco">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
           <path d="M15.5001 14H14.7101L14.4301 13.73C15.6301 12.33 16.2501 10.42 15.9101 8.39002C15.4401 5.61002 13.1201 3.39002 10.3201 3.05002C6.09014 2.53002 2.53014 6.09001 3.05014 10.32C3.39014 13.12 5.61014 15.44 8.39014 15.91C10.4201 16.25 12.3301 15.63 13.7301 14.43L14.0001 14.71V15.5L18.2501 19.75C18.6601 20.16 19.3301 20.16 19.7401 19.75C20.1501 19.34 20.1501 18.67 19.7401 18.26L15.5001 14ZM9.50014 14C7.01014 14 5.00014 11.99 5.00014 9.50002C5.00014 7.01002 7.01014 5.00002 9.50014 5.00002C11.9901 5.00002 14.0001 7.01002 14.0001 9.50002C14.0001 11.99 11.9901 14 9.50014 14Z" fill="#A2A2A2"/>
         </svg>
       </button>
     </form>
   </header>
-  <main>
-   
+  <main class="add-produto container">
+   <form class="add-produto__form">
+    <fieldset>
+      <legend class="add-produto__titulo">Adicionar novo produto</legend>
+      <div class="add-produto__input-box">
+        <label for="url-imagem" class="add-produto__label">URL da imagem</label>
+        <input class="add-produto__input" id="url-imagem" name="url-imagem" type="text" required>
+      </div>
+      <div class="add-produto__input-box">
+        <label for="categoria" class="add-produto__label">Categoria</label>
+        <input class="add-produto__input" id="categoria" name="categoria" type="text" required>
+      </div>
+      <div class="add-produto__input-box">
+        <label for="nome-produto" class="add-produto__label">Nome do produto</label>
+        <input class="add-produto__input" id="nome-produto" name="nome-produto" type="text" required>
+      </div>
+      <div class="add-produto__input-box">
+        <label for="preco-produto" class="add-produto__label">Predo do produto</label>
+        <input class="add-produto__input" id="preco-produto" name="preco-produto" type="text" required>
+      </div>
+      <textarea class="add-produto__descricao" id="descrição-produto" name="descrição-produto" placeholder="Descrição do produto"></textarea>
+      <button class="botao botao--extendido">Adicionar produto</button>
+    </fieldset>
+   </form>
   </main>
   <footer class="rodape">
     <div class="rodape__conteudo container">
@@ -67,7 +89,7 @@
             <label for="name" class="form-contato__labelInputName">Nome</label>
             <input class="form-contato__inputName" id="name" type="text" placeholder="Escreva seu nome" required>
           </div>
-          <textarea class="form-contato__inputMensagem" id="mensagem" type="text" placeholder="Escreva sua mensagem" required></textarea>
+          <textarea class="form-contato__inputMensagem" id="mensagem" placeholder="Escreva sua mensagem" required></textarea>
           <button class="botao">Enviar mensagem</button>
         </fieldset>
       </form>

@@ -26,7 +26,7 @@
 }
 
 .produtos {
-    background-color: var(--bg-body);
+    background-color: var(--bg-cor-body);
 }
 
 .produtos__wrap {

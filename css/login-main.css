@@ -8,7 +8,7 @@ main {
 }
 
 .login {
-    background-color: var(--bg-body);
+    background-color: var(--bg-cor-body);
     height: 100%;
     width: 100%;
 }
