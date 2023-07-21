@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="../styles/reset.css">
   <link rel="stylesheet" href="../styles/base.css">
   <link rel="stylesheet" href="../styles/produtos-main.css">
-  <link rel="stylesheet" href="../styles/cabacalho.css">
+  <link rel="stylesheet" href="../styles/cabecalho.css">
   <link rel="stylesheet" href="../styles/rodape.css">
   <link rel="stylesheet" href="../styles/botao.css">
 </head>
@@ -47,8 +47,8 @@
       <a href="adicionar-produtos.html" class="botao">Adicionar produto</a>
     </div>
     <nav>
-      <ul class="produtos__lista-produtos">
-        <li class="produto__item">
+      <ul class="produtos__lista-produtos" data-product>
+        <!-- <li class="produto__item">
           <img class="produto__imagem" src="../assets/star-wars/unsplash_1VV1MRafd7A.png" width="176" height="174">
           <p class="produto__nome">Produto XYZ</p>
           <p class="produto__preco">R$ 60,00</p>
@@ -155,7 +155,7 @@
           <p class="produto__nome">Produto XYZ</p>
           <p class="produto__preco">R$ 60,00</p>
           <p class="produto__codigo">#12345</p>
-        </li>
+        </li> -->
       </ul>
     </nav>
   </main>
@@ -189,5 +189,6 @@
     <p class="rodape__desenvolvedor">Desenvolvido por Guilherme<br>2023</p>
   </footer>
   <script src="../scripts/mostra-pesquisa.js"></script>
+  <script src="../controllers/produtos-controller.js" type="module"></script>
 </body>
 </html>
