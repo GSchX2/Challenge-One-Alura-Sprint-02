@@ -1,39 +1,12 @@
-import { productServices } from "../services/product-services.js";
+import { productServicesAPI } from "../services/product-services-API.js";
 
 const listaProdutosPorCategoriaEl = document.querySelector("[data-catagory-product]");
 
-function mostrarProduto(produtoData, index) {
-    const produtoURL = produtoData.url;
-    const produtoNome = produtoData.name;
-    const produtoPrice = produtoData.price;
-    // const produtoCodigo = produtoData.code;
-    // const produtoId = produtoData.id;
-    // const produtoCategoria = produtoData.category;
-    // const produtoDescricao = produtoData.description;
+function mostrarCategoria(categoria, categoriaDataAttribute) {
+    const produtosCategoriaEl = document.createElement('div');
+    produtosCategoriaEl.classList.add("produtos__wrapper");
 
-    const produtoEl = document.createElement('li');
-    produtoEl.classList.add("produto__item");
-
-    if (index > 3) {
-        produtoEl.classList.add("produto__item--large-view");
-    }
-
-    produtoEl.innerHTML = `
-        <img class="produto__imagem" src="${produtoURL}" width="176" height="174">
-        <p class="produto__nome">${produtoNome}</p>
-        <p class="produto__preco">${produtoPrice}</p>
-        <a href="#" class="produto__link">Ver Produto</a>
-        `;
-
-    return produtoEl;
-}
-
-function criaProdutosCategoria(categoria) {
-    const categoriaDataAttribute = categoria.replace(/[^a-zA-Z0-9]/g, "");
-    const produtosCategoria = document.createElement('div');
-    produtosCategoria.classList.add("produtos__wrapper");
-
-    produtosCategoria.innerHTML = `
+    produtosCategoriaEl.innerHTML = `
         <div class="produtos__categoria">
             <h2 class="produtos__categoria-titulo">${categoria}</h2>
             <a href="produtos.html" class="produtos__categoria-link">Ver tudo
@@ -55,20 +28,61 @@ function criaProdutosCategoria(categoria) {
         </nav>
         `;
 
-    listaProdutosPorCategoriaEl.appendChild(produtosCategoria);
+        return produtosCategoriaEl;
+}
 
-    const produtosLista = document.querySelector(`[data-category-${categoriaDataAttribute}]`)
-    const produtosDaCategoria = this.filter(produtoLista => produtoLista.category === categoria);
+function mostrarProdutoDaCategoria(produtoData) {
+    const produtoURL = produtoData.url;
+    const produtoNome = produtoData.name;
+    const produtoPrice = produtoData.price;
+    // const produtoCodigo = produtoData.code;
+    // const produtoId = produtoData.id;
+    // const produtoCategoria = produtoData.category;
+    // const produtoDescricao = produtoData.description;
 
-    produtosDaCategoria.forEach((produto, index) => produtosLista.appendChild(mostrarProduto(produto, index)));
+    const produtoEl = document.createElement('li');
+    produtoEl.classList.add("produto__item");
+
+    produtoEl.innerHTML = `
+        <img class="produto__imagem" src="${produtoURL}" width="176" height="174">
+        <p class="produto__nome">${produtoNome}</p>
+        <p class="produto__preco">${produtoPrice}</p>
+        <a href="#" class="produto__link">Ver Produto</a>
+        `;
+
+    return produtoEl;
+}
+
+function configExibicaoDeProdutos(produtosLista) {
+    const produtosDaCategoriaEL = produtosLista.childNodes;
+    produtosDaCategoriaEL.forEach((produto, index) => {
+        if (index > 4) {
+            produto.classList.add("produto__item--large-view");
+        }
+    });
+}
+
+function mostrarProdutosDasCategorias(categoria) {
+    const categoriaDataAttribute = categoria.replace(/[^a-zA-Z0-9]/g, "");
+
+    listaProdutosPorCategoriaEl.appendChild(mostrarCategoria(categoria, categoriaDataAttribute));
+
+    const produtosLista = document.querySelector(`[data-category-${categoriaDataAttribute}]`);
+    const produtosDaCategoria = this.filter(produto => produto.category === categoria);
+    const produtosDaCategoriaParaMostrar = produtosDaCategoria.slice(0, 6);
+
+    produtosDaCategoriaParaMostrar.forEach(produto => produtosLista.appendChild(mostrarProdutoDaCategoria(produto)));
+    
+    configExibicaoDeProdutos(produtosLista)
+   
 }
 
 async function mostrarProdutosPorCategoria() {
     try {
-        const listaProdutosPorCategoriaAPI = await productServices.listaProdutos();
-        const categorias = [...new Set(listaProdutosPorCategoriaAPI.map(produto => produto.category))];
+        const listaProdutosPorCategoria = await productServicesAPI.listaProdutosAPI();
+        const categorias = [...new Set(listaProdutosPorCategoria.map(produto => produto.category))];
 
-        categorias.forEach(criaProdutosCategoria, listaProdutosPorCategoriaAPI);
+        categorias.forEach(mostrarProdutosDasCategorias, listaProdutosPorCategoria);
     } catch {
         listaProdutosPorCategoriaEl.innerHTML = `<h2 class="produtos__categoria-titulo">Não foi possível carregar a lista de produtos<h2>`;
     }

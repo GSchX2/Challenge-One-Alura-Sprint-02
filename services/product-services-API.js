@@ -1,27 +1,20 @@
 // GET
 
-async function listaProdutos() {
+async function listaProdutosAPI() {
     const listaProdutosRequest = await fetch("http://localhost:3000/produtos");
     const listaProdutosResponse = await listaProdutosRequest.json();
 
     return listaProdutosResponse;    
 }
 
-// async function listaProdutosPorCategoria(categoria) {
-//     const listaProdutosRequest = await fetch(`http://localhost:3000/produtos?category=${categoria}`);
-//     const listaProdutosResponse = await listaProdutosRequest.json();
-
-//     return listaProdutosResponse;    
-// }
-
-async function produto(id) {
+async function produtoAPI(id) {
     const produtoRequest = await fetch(`http://localhost:3000/produtos/${id}`);
     const produtoResponse = await produtoRequest.json();
 
     return produtoResponse;
 }
 
-async function buscarProduto(termoDeBusca) {
+async function buscarProdutoAPI(termoDeBusca) {
     const buscarRequest = await fetch(`http://localhost:3000/produtos?q=${termoDeBusca}`);
     const buscarResponse = await buscarRequest.json();
 
@@ -31,7 +24,7 @@ async function buscarProduto(termoDeBusca) {
 
 // POST
 
-async function adicionarProduto(produto) {
+async function adicionarProdutoAPI(produto) {
     const adicionarProdutoRequest = await fetch("http://localhost:3000/produtos", {
         method: "POST",
         headers: {
@@ -61,10 +54,9 @@ async function adicionarProduto(produto) {
     return adicionarProdutoResponse;
 }
 
-export const productServices = {
-    listaProdutos,
-    // listaProdutosPorCategoria,
-    produto,
-    buscarProduto,
-    adicionarProduto
+export const productServicesAPI = {
+    listaProdutosAPI,
+    produtoAPI,
+    buscarProdutoAPI,
+    adicionarProdutoAPI
 }

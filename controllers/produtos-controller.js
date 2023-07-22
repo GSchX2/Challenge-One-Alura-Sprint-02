@@ -1,4 +1,4 @@
-import { productServices } from "../services/product-services.js";
+import { productServicesAPI } from "../services/product-services-API.js";
 
 const listaProdutosEl = document.querySelector("[data-product]");
 const mainProdutos = document.querySelector("main")
@@ -27,8 +27,8 @@ function mostrarProduto(produtoData) {
 
 async function mostrarProdutos() {
     try {
-        const listaProdutosAPI = await productServices.listaProdutos();
-        listaProdutosAPI.forEach(produto => listaProdutosEl.appendChild(mostrarProduto(produto)));
+        const listaProdutos = await productServicesAPI.listaProdutosAPI();
+        listaProdutos.forEach(produto => listaProdutosEl.appendChild(mostrarProduto(produto)));
     } catch {
         mainProdutos.innerHTML = `<h2 class="produtos__titulo">Não foi possível carregar a lista de produtos<h2>`;
     }
