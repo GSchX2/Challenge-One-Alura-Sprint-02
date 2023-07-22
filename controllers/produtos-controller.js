@@ -20,7 +20,7 @@ function mostrarProduto(produtoData) {
         <p class="produto__nome">${produtoNome}</p>
         <p class="produto__preco">${produtoPrice}</p>
         <p class="produto__codigo">${produtoCodigo}</p>
-    `;
+        `;
 
     return produtoEl;
 }

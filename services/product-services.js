@@ -7,6 +7,13 @@ async function listaProdutos() {
     return listaProdutosResponse;    
 }
 
+// async function listaProdutosPorCategoria(categoria) {
+//     const listaProdutosRequest = await fetch(`http://localhost:3000/produtos?category=${categoria}`);
+//     const listaProdutosResponse = await listaProdutosRequest.json();
+
+//     return listaProdutosResponse;    
+// }
+
 async function produto(id) {
     const produtoRequest = await fetch(`http://localhost:3000/produtos/${id}`);
     const produtoResponse = await produtoRequest.json();
@@ -56,6 +63,7 @@ async function adicionarProduto(produto) {
 
 export const productServices = {
     listaProdutos,
+    // listaProdutosPorCategoria,
     produto,
     buscarProduto,
     adicionarProduto
