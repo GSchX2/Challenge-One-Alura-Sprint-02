@@ -2,7 +2,7 @@ import { productServicesAPI } from "../services/product-services-API.js";
 
 const listaProdutosPorCategoriaEl = document.querySelector("[data-catagory-product]");
 
-function mostrarCategoria(categoria, categoriaDataAttribute) {
+function mostrarCategoria(categoria) {
     const produtosCategoriaEl = document.createElement('div');
     produtosCategoriaEl.classList.add("produtos__wrapper");
 
@@ -23,7 +23,7 @@ function mostrarCategoria(categoria, categoriaDataAttribute) {
             </a>
         </div>
         <nav>
-            <ul class="produtos__lista-produtos" data-category-${categoriaDataAttribute}>
+            <ul class="produtos__lista-produtos" data-category>
             </ul>
         </nav>
         `;
@@ -53,27 +53,31 @@ function mostrarProdutoDaCategoria(produtoData) {
     return produtoEl;
 }
 
-function configExibicaoDeProdutos(produtosLista) {
-    const produtosDaCategoriaEL = produtosLista.childNodes;
-    produtosDaCategoriaEL.forEach((produto, index) => {
-        if (index > 4) {
+function configExibicaoDeProdutos(listaDeProdutosDaCategoriaEl) {
+    const produtosDaCategoriaEL = listaDeProdutosDaCategoriaEl.childNodes;
+   
+    produtosDaCategoriaEL.forEach((produto, indexCategoria) => {
+        console.log(produto)
+
+        if (indexCategoria > 4) {
             produto.classList.add("produto__item--large-view");
         }
     });
 }
 
 function mostrarProdutosDasCategorias(categoria) {
-    const categoriaDataAttribute = categoria.replace(/[^a-zA-Z0-9]/g, "");
+    listaProdutosPorCategoriaEl.appendChild(mostrarCategoria(categoria));
 
-    listaProdutosPorCategoriaEl.appendChild(mostrarCategoria(categoria, categoriaDataAttribute));
-
-    const produtosLista = document.querySelector(`[data-category-${categoriaDataAttribute}]`);
+    const listaDeProdutosDasCategoriasEl = document.querySelectorAll('[data-category]');
+    const indexCategoria = listaDeProdutosDasCategoriasEl.length - 1;
     const produtosDaCategoria = this.filter(produto => produto.category === categoria);
     const produtosDaCategoriaParaMostrar = produtosDaCategoria.slice(0, 6);
 
-    produtosDaCategoriaParaMostrar.forEach(produto => produtosLista.appendChild(mostrarProdutoDaCategoria(produto)));
+    produtosDaCategoriaParaMostrar.forEach(produto => {
+            listaDeProdutosDasCategoriasEl[indexCategoria].appendChild(mostrarProdutoDaCategoria(produto));
+        });
     
-    configExibicaoDeProdutos(produtosLista)
+    configExibicaoDeProdutos(listaDeProdutosDasCategoriasEl[indexCategoria])
    
 }
 
