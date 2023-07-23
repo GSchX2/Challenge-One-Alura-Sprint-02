@@ -9,7 +9,7 @@ function mostrarCategoria(categoria) {
     produtosCategoriaEl.innerHTML = `
         <div class="produtos__categoria">
             <h2 class="produtos__categoria-titulo">${categoria}</h2>
-            <a href="produtos.html" class="produtos__categoria-link">Ver tudo
+            <a href="#" class="produtos__categoria-link">Ver tudo
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <g clip-path="url(#clip0_166_2677)">
                     <path d="M2.66634 8.66665L10.7797 8.66665L7.05301 12.3933L7.99967 13.3333L13.333 7.99998L7.99968 2.66665L7.05968 3.60665L10.7797 7.33331L2.66634 7.33331L2.66634 8.66665Z" fill="#2A7AE4"/>
@@ -31,7 +31,7 @@ function mostrarCategoria(categoria) {
         return produtosCategoriaEl;
 }
 
-function mostrarProdutoDaCategoria(produtoData) {
+export default function mostrarProdutoDaCategoria(produtoData) {
     const produtoURL = produtoData.url;
     const produtoNome = produtoData.name;
     const produtoPrice = produtoData.price;
@@ -44,7 +44,7 @@ function mostrarProdutoDaCategoria(produtoData) {
     produtoEl.classList.add("produto__item");
 
     produtoEl.innerHTML = `
-        <img class="produto__imagem" src="${produtoURL}" width="176" height="174">
+        <img class="produto__imagem" src="${produtoURL}" alt="produto" width="176" height="174">
         <p class="produto__nome">${produtoNome}</p>
         <p class="produto__preco">${produtoPrice}</p>
         <a href="#" class="produto__link">Ver Produto</a>
@@ -57,7 +57,6 @@ function configExibicaoDeProdutos(listaDeProdutosDaCategoriaEl) {
     const produtosDaCategoriaEL = listaDeProdutosDaCategoriaEl.childNodes;
    
     produtosDaCategoriaEL.forEach((produto, indexCategoria) => {
-        console.log(produto)
 
         if (indexCategoria > 4) {
             produto.classList.add("produto__item--large-view");

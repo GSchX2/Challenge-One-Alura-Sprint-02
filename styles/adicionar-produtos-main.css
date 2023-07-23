@@ -68,14 +68,13 @@
 
 @media screen and (min-width: 768px) {
     .add-produto__form {
-        height: auto;
         padding-block: 3.2rem;
     }
 }
 
 @media screen and (min-width: 1440px) {
     .add-produto__form {
-        height: calc(100vh - 7.2rem);
+        height: calc(100vh - 11.4rem);
         padding-block: 6.4rem;
         width: 56rem;
     }

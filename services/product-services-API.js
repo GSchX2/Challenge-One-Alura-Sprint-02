@@ -14,9 +14,13 @@ async function produtoAPI(id) {
     return produtoResponse;
 }
 
-async function buscarProdutoAPI(termoDeBusca) {
+async function pesquisarProdutoAPI(termoDeBusca) {
     const buscarRequest = await fetch(`http://localhost:3000/produtos?q=${termoDeBusca}`);
     const buscarResponse = await buscarRequest.json();
+
+    if (buscarRequest.status === 404) {
+        throw Error("Não foi possível efetuar a pesquisa");
+    }
 
     return buscarResponse;
 }
@@ -31,13 +35,12 @@ async function adicionarProdutoAPI(produto) {
             "Content-type": "application/json"
         },
         body: JSON.stringify({
-            url: produto.url,
-            alt: produto.alt,
-            categoria: produto.categoria,
-            name: produto.name,
-            price: produto.price,
+            url: produto.urlImagem,
+            category: produto.categoria,
+            name: produto.nome,
+            price: produto.preco,
             code: ("#" + (Math.floor(Math.random() * 100000))).padEnd(6, "0"),
-            description: produto.description
+            description: produto.descricao
         })
     });
 
@@ -57,6 +60,6 @@ async function adicionarProdutoAPI(produto) {
 export const productServicesAPI = {
     listaProdutosAPI,
     produtoAPI,
-    buscarProdutoAPI,
+    pesquisarProdutoAPI,
     adicionarProdutoAPI
 }
