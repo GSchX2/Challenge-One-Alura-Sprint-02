@@ -1,4 +1,5 @@
 import { productServicesAPI } from "../services/product-services-API.js";
+import mostrarProdutoDaCategoria from "../controllers/mostra-produto-controller.js";
 
 const listaProdutosPorCategoriaEl = document.querySelector("[data-catagory-product]");
 
@@ -29,28 +30,6 @@ function mostrarCategoria(categoria) {
         `;
 
         return produtosCategoriaEl;
-}
-
-export default function mostrarProdutoDaCategoria(produtoData) {
-    const produtoURL = produtoData.url;
-    const produtoNome = produtoData.name;
-    const produtoPrice = produtoData.price;
-    // const produtoCodigo = produtoData.code;
-    // const produtoId = produtoData.id;
-    // const produtoCategoria = produtoData.category;
-    // const produtoDescricao = produtoData.description;
-
-    const produtoEl = document.createElement('li');
-    produtoEl.classList.add("produto__item");
-
-    produtoEl.innerHTML = `
-        <img class="produto__imagem" src="${produtoURL}" alt="produto" width="176" height="174">
-        <p class="produto__nome">${produtoNome}</p>
-        <p class="produto__preco">${produtoPrice}</p>
-        <a href="#" class="produto__link">Ver Produto</a>
-        `;
-
-    return produtoEl;
 }
 
 function configExibicaoDeProdutos(listaDeProdutosDaCategoriaEl) {
@@ -87,7 +66,7 @@ async function mostrarProdutosPorCategoria() {
 
         categorias.forEach(mostrarProdutosDasCategorias, listaProdutosPorCategoria);
     } catch {
-        listaProdutosPorCategoriaEl.innerHTML = `<h2 class="produtos__categoria-titulo">Não foi possível carregar a lista de produtos<h2>`;
+        listaProdutosPorCategoriaEl.innerHTML = `<p class="error-message">Não foi possível carregar a lista de produtos<p>`;
     }
 }
 

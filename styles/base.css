@@ -42,6 +42,15 @@
     padding-inline: 1.6rem;
 }
 
+.error-message {
+    background-color: inherit;
+    color: var(--texto-cor-escura);
+    font-size: var(--font-tamanho-grande);
+    height: 20rem;
+    padding-top: 5rem;
+    text-align: center;
+}
+
 
 @media screen and (min-width: 768px) {
     .container {

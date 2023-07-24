@@ -1,14 +1,14 @@
 import { productServicesAPI } from "../services/product-services-API.js";
-import mostrarProdutosPesquisa from "../controllers/produtos-por-categoria-controller.js"
+import mostrarProdutosPesquisa from "../controllers/mostra-produto-controller.js"
 
-const pesquisaEl = document.querySelector('[data-form-pesquisa]');
+const pesquisaEl = document.querySelectorAll('[data-form-pesquisa]');
 const mostrarResultadoPesquisaEl = document.querySelector("main");
 
 async function pesquisaProduto(evento) {
-    evento.preventDefault()
+    evento.preventDefault();
 
-    const inputPesquisaEl = pesquisaEl.elements["pesquisa-produto"].value;
-
+    let inputPesquisaEl = evento.target.elements["pesquisa-produto"].value;
+    
     while(mostrarResultadoPesquisaEl.firstChild) {
         mostrarResultadoPesquisaEl.firstChild.remove();
     }
@@ -22,20 +22,20 @@ async function pesquisaProduto(evento) {
     mostrarResultadoPesquisaEl.classList.add("container");
     produtosListaEl.classList.add("produtos__lista-produtos");
 
-
     try {
         const resultadoPesquisa = await productServicesAPI.pesquisarProdutoAPI(inputPesquisaEl);
-    
+        
         if (resultadoPesquisa.length) {
             resultadoPesquisa.forEach(
                 produto => produtosListaEl.appendChild(mostrarProdutosPesquisa(produto)));
         } else {
-            mostrarResultadoPesquisaEl.innerHTML = `<h2 class="produtos__titulo">Nenhum produto foi encontrado<h2>`;
+            mostrarResultadoPesquisaEl.innerHTML = `<p class="error-message">Nenhum produto foi encontrado<p>`;
         }
     } catch (error) {
-        mostrarResultadoPesquisaEl.innerHTML = `<h2 class="produtos__titulo">${error}<h2>`;
+        mostrarResultadoPesquisaEl.innerHTML = `<p class="error-message">${error}<p>`;
     }
 
+    evento.target.elements["pesquisa-produto"].value = "";
 }
 
-pesquisaEl.addEventListener("submit", pesquisaProduto);
+pesquisaEl.forEach(pesquisaEl => pesquisaEl.addEventListener("submit", pesquisaProduto));

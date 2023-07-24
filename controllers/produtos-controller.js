@@ -30,7 +30,7 @@ async function mostrarProdutos() {
         const listaProdutos = await productServicesAPI.listaProdutosAPI();
         listaProdutos.forEach(produto => listaProdutosEl.appendChild(mostrarProduto(produto)));
     } catch {
-        mainProdutosEl.innerHTML = `<h2 class="produtos__titulo">Não foi possível carregar a lista de produtos<h2>`;
+        mainProdutosEl.innerHTML = `<p class="error-message">Não foi possível carregar a lista de produtos<p>`;
     }
 }
 

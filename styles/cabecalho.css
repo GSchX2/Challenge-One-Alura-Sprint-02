@@ -16,8 +16,9 @@
 .cabecalho__pesquisa {
     align-items: center;
     background-color: var(--bg-cor-pesquisa);
-    border: none;
+    border: whitesmoke;
     border-radius: 4rem;
+    box-shadow: 0 1px 3px grey;
     color: var(--texto-cor-escura);
     display: flex;
     justify-content: space-between;
@@ -87,7 +88,7 @@
 
 .cabecalho__pesquisa--pequena-view-mostrar {
     position: absolute;
-    top: 7.5rem;
+    top: 8rem;
     left: 50%;
     transform: translateX(-50%);
     width: 80%;
@@ -102,6 +103,8 @@
     }
 
     .cabecalho__pesquisa {
+        border: none;
+        box-shadow: none;
         width: 100%;
     }
 
