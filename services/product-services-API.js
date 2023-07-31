@@ -7,22 +7,15 @@ async function listaProdutosAPI() {
     return listaProdutosResponse;    
 }
 
-async function produtoAPI(id) {
-    const produtoRequest = await fetch(`http://localhost:3000/produtos/${id}`);
-    const produtoResponse = await produtoRequest.json();
-
-    return produtoResponse;
-}
-
 async function pesquisarProdutoAPI(termoDeBusca) {
-    const buscarRequest = await fetch(`http://localhost:3000/produtos?q=${termoDeBusca}`);
-    const buscarResponse = await buscarRequest.json();
+    const pesquisarRequest = await fetch(`http://localhost:3000/produtos?q=${termoDeBusca}`);
+    const pesquisarResponse = await pesquisarRequest.json();
 
-    if (buscarRequest.status === 404) {
+    if (pesquisarRequest.status === 404) {
         throw Error("Não foi possível efetuar a pesquisa");
     }
 
-    return buscarResponse;
+    return pesquisarResponse;
 }
 
 
@@ -44,12 +37,11 @@ async function adicionarProdutoAPI(produto) {
         })
     });
 
-    console.log(produto);
-
     if (!adicionarProdutoRequest.ok) {
         throw Error("Não foi possível adicionar o produto");
     } else {
-        console.log(`Produto adicionado ${produto}`);
+        console.log("Produto adicionado");
+        console.log(produto);
     }
 
     const adicionarProdutoResponse = await adicionarProdutoRequest.json();
@@ -57,9 +49,24 @@ async function adicionarProdutoAPI(produto) {
     return adicionarProdutoResponse;
 }
 
+
+// DELETE
+
+async function deletarProdutoAPI(produtoId) {
+    const deletarRequest = await fetch(`http://localhost:3000/produtos/${produtoId}`, {
+        method: "DELETE"
+    });
+    
+    if (!deletarRequest.ok) {
+        throw Error("Não foi possível deletar o produto");
+    } else {
+        console.log("item deletado");
+    }
+}
+
 export const productServicesAPI = {
     listaProdutosAPI,
-    produtoAPI,
     pesquisarProdutoAPI,
-    adicionarProdutoAPI
+    adicionarProdutoAPI,
+    deletarProdutoAPI
 }

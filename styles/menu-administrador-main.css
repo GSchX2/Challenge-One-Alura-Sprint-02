@@ -28,9 +28,36 @@
     width: calc(50% - 0.8rem);
 }
 
+.produto__wrapper-imagem,
 .produto__imagem {
     width: 100%;
     height: auto;
+}
+
+.produto__wrapper-imagem {
+    position: relative;
+}
+
+.produto__edicao {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+}
+
+.produto__botao-edicao {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.8rem;
+}
+
+.produto__icone-edicao {
+    fill: white;
+}
+
+.produto__icone-edicao:hover {
+    padding-bottom: 0;
+    fill: var(--texto-cor-colorida);
 }
 
 .produto__nome,
