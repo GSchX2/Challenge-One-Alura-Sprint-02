@@ -42,18 +42,29 @@ function mostrarProduto(produtoData) {
     return produtoEl;
 }
 
-async function deletarProduto(index, evento) {
+async function mostrarProdutos() {
+    try {
+        listaProdutos = await productServicesAPI.listaProdutosAPI();
+        listaProdutos.forEach(produto => listaProdutosEl.appendChild(mostrarProduto(produto))); 
+    } catch {
+        mainProdutosEl.innerHTML = `<p class="error-message">Não foi possível carregar a lista de produtos<p>`;
+    }
+}
+
+
+await mostrarProdutos();
+
+
+async function deletarProduto(botao, index, evento) {
     evento.preventDefault();
 
     const produtoId = listaProdutos[index].id;
-    const produtoEl = listaProdutosEl.children[index];
-    // const produtoEl = botao.parentElement.parentElement.parentElement;
+    // const produtoEl = listaProdutosEl.children[index];
+    const produtoEl = botao.parentElement.parentElement.parentElement;
 
     produtoEl.remove();
 
-    listaProdutos.splice(index, 1);
-
-    console.log(produtoId)
+    listaProdutos.splice(index, 1, "Deletado");
     
     try {
         await productServicesAPI.deletarProdutoAPI(produtoId);
@@ -67,40 +78,27 @@ async function editarProduto(index, evento) {
 
     const produtoEl = listaProdutosEl.children[index];
 
-    const produto = listaProdutos[index];
-    const produtoId = listaProdutos[index].id;
-    const produtoURL = listaProdutos[index].url;
-    const produtoCategoria = listaProdutos[index].category;
-    const produtoNome = listaProdutos[index].name;
-    const produtoPreco = listaProdutos[index].price;
-    const produtoCodigo = listaProdutos[index].code;
-    const produtoDescricao = listaProdutos[index].description;
-
-}
-
-async function mostrarProdutos() {
-    try {
-        listaProdutos = await productServicesAPI.listaProdutosAPI();
-        listaProdutos.forEach(produto => listaProdutosEl.appendChild(mostrarProduto(produto))); 
-    } catch {
-        mainProdutosEl.innerHTML = `<p class="error-message">Não foi possível carregar a lista de produtos<p>`;
+    const produto = {
+        produtoURL: listaProdutos[index].url,
+        produtoCategoria: listaProdutos[index].category,
+        produtoNome: listaProdutos[index].name,
+        produtoPreco: listaProdutos[index].price,
+        produtoDescricao: listaProdutos[index].description
     }
 
-    // function editar() {
+    localStorage.setItem("produto", JSON.stringify(produto));
+
+    window.location.href = "../views/editar-produtos.html";
+}
+
+const botaoDeletaEl = document.querySelectorAll("[data-product-delete]");
+botaoDeletaEl.forEach((botao, index) => botao.addEventListener("click", (evento) => deletarProduto(botao, index, evento)));
+
+const botaoEditaEl = document.querySelectorAll("[data-product-edit]");
+botaoEditaEl.forEach((botao, index) => botao.addEventListener("click", (evento) => editarProduto(index, evento)));
+
+ // function editar() {
     //     console.log("edita");
     //     const productCode = this.parentElement.parentElement.parentElement.querySelector('.');
     //     console.log(productCode)
     // }
-
-   
-    const botaoDeletaEl = document.querySelectorAll("[data-product-delete]");
-    botaoDeletaEl.forEach((botao, index) => botao.addEventListener("click", (evento) => deletarProduto(index, evento)));
-
-    const botaoEditaEl = document.querySelectorAll("[data-product-edit]");
-    botaoEditaEl.forEach((botao, index) => botao.addEventListener("click", (evento) => editarProduto(index, evento)));
-
-    // console.log(listaProdutosEl);    
-    // console.log(listaProdutosEl.children[0]);    
-}
-
-mostrarProdutos();
