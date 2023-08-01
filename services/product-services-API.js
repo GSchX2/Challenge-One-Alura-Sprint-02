@@ -50,6 +50,38 @@ async function adicionarProdutoAPI(produto) {
 }
 
 
+// PUT
+
+async function editarProdutoAPI(produto) {
+    const produtoId = produto.id;
+    const editarRequest = await fetch(`http://localhost:3000/produtos/${produtoId}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            url: produto.urlImagem,
+            category: produto.categoria,
+            name: produto.nome,
+            price: produto.preco,
+            code: produto.codigo,
+            description: produto.descricao
+        })
+    });
+
+    if (!editarRequest) {
+        throw Error("Não foi possível editar o produto");
+    } else {
+        console.log("Produto editado");
+        console.log(produto);
+    }
+
+    const editarResponse = await editarRequest.json();
+
+    return editarResponse;
+}
+
+
 // DELETE
 
 async function deletarProdutoAPI(produtoId) {
@@ -68,5 +100,6 @@ export const productServicesAPI = {
     listaProdutosAPI,
     pesquisarProdutoAPI,
     adicionarProdutoAPI,
+    editarProdutoAPI,
     deletarProdutoAPI
 }

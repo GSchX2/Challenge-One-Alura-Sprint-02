@@ -51,10 +51,6 @@ async function mostrarProdutos() {
     }
 }
 
-
-await mostrarProdutos();
-
-
 async function deletarProduto(botao, index, evento) {
     evento.preventDefault();
 
@@ -73,16 +69,16 @@ async function deletarProduto(botao, index, evento) {
     }
 }
 
-async function editarProduto(index, evento) {
+function editarProduto(index, evento) {
     evento.preventDefault();
 
-    const produtoEl = listaProdutosEl.children[index];
-
     const produto = {
+        produtoId: listaProdutos[index].id,
         produtoURL: listaProdutos[index].url,
         produtoCategoria: listaProdutos[index].category,
         produtoNome: listaProdutos[index].name,
         produtoPreco: listaProdutos[index].price,
+        produtoCodigo: listaProdutos[index].code,
         produtoDescricao: listaProdutos[index].description
     }
 
@@ -90,6 +86,9 @@ async function editarProduto(index, evento) {
 
     window.location.href = "../views/editar-produtos.html";
 }
+
+
+await mostrarProdutos();
 
 const botaoDeletaEl = document.querySelectorAll("[data-product-delete]");
 botaoDeletaEl.forEach((botao, index) => botao.addEventListener("click", (evento) => deletarProduto(botao, index, evento)));
