@@ -153,13 +153,13 @@
       "description": ""
     },
     {
-      "id": 18,
       "url": "../assets/diversos/unsplash_sYVY_ZKwaxU.png",
       "category": "Diversos",
       "name": "Produtos XYZ",
-      "price": "R$ 60,00",
+      "price": "R$ 150",
       "code": "#12345",
-      "description": ""
+      "description": "",
+      "id": 18
     }
   ]
 }

@@ -1,7 +1,7 @@
 import { productServicesAPI } from "../services/product-services-API.js";
 
 const produtoLocalStorage = JSON.parse(localStorage.getItem("produto"));
-const formularioEditarProduto = document.querySelector('[data-add-produto]');
+const formularioEditarProduto = document.querySelector('[data-edit-product]');
 
 formularioEditarProduto.elements['url-imagem'].value = produtoLocalStorage.produtoURL;
 formularioEditarProduto.elements['categoria'].value = produtoLocalStorage.produtoCategoria;
