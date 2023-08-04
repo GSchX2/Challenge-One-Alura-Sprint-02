@@ -1,14 +1,14 @@
 // GET
 
 async function listaProdutosAPI() {
-    const listaProdutosRequest = await fetch("http://localhost:3000/produtos");
+    const listaProdutosRequest = await fetch("https://64cd4d0abb31a268409a9101.mockapi.io/API/produtos");
     const listaProdutosResponse = await listaProdutosRequest.json();
 
     return listaProdutosResponse;    
 }
 
 async function pesquisarProdutoAPI(termoDeBusca) {
-    const pesquisarRequest = await fetch(`http://localhost:3000/produtos?q=${termoDeBusca}`);
+    const pesquisarRequest = await fetch(`https://64cd4d0abb31a268409a9101.mockapi.io/API/produtos?q=${termoDeBusca}`);
     const pesquisarResponse = await pesquisarRequest.json();
 
     if (pesquisarRequest.status === 404) {
@@ -22,7 +22,7 @@ async function pesquisarProdutoAPI(termoDeBusca) {
 // POST
 
 async function adicionarProdutoAPI(produto) {
-    const adicionarProdutoRequest = await fetch("http://localhost:3000/produtos", {
+    const adicionarProdutoRequest = await fetch("https://64cd4d0abb31a268409a9101.mockapi.io/API/produtos", {
         method: "POST",
         headers: {
             "Content-type": "application/json"
@@ -54,7 +54,7 @@ async function adicionarProdutoAPI(produto) {
 
 async function editarProdutoAPI(produto) {
     const produtoId = produto.id;
-    const editarRequest = await fetch(`http://localhost:3000/produtos/${produtoId}`, {
+    const editarRequest = await fetch(`https://64cd4d0abb31a268409a9101.mockapi.io/API/produtos/${produtoId}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json"
@@ -85,7 +85,7 @@ async function editarProdutoAPI(produto) {
 // DELETE
 
 async function deletarProdutoAPI(produtoId) {
-    const deletarRequest = await fetch(`http://localhost:3000/produtos/${produtoId}`, {
+    const deletarRequest = await fetch(`https://64cd4d0abb31a268409a9101.mockapi.io/API/produtos/${produtoId}`, {
         method: "DELETE"
     });
     
