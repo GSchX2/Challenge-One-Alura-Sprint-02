@@ -13,12 +13,16 @@ async function addProduto(evento) {
         descricao: formularioAddProduto.elements['descricao-produto'].value,
     }
 
-    try {
-        await productServicesAPI.adicionarProdutoAPI(produto);
-        window.location.href = "../views/menu-administrador.html";
-    } catch (error) {
-        alert(error);
-    }
+    if (produto.urlImagem.length > 0 && produto.categoria.length > 0 && produto.nome.length > 0 && produto.preco.length > 0) {
+        try {
+            await productServicesAPI.adicionarProdutoAPI(produto);
+            window.location.href = "../views/menu-administrador.html";
+        } catch (error) {
+            alert(error);
+        }
+    } else {
+        alert("Os campos requeridos devem ser preenchidos")
+    }   
 }
 
 formularioAddProduto.addEventListener("submit", addProduto);

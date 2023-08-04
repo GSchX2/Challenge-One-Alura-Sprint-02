@@ -95,9 +95,3 @@ botaoDeletaEl.forEach((botao, index) => botao.addEventListener("click", (evento)
 
 const botaoEditaEl = document.querySelectorAll("[data-product-edit]");
 botaoEditaEl.forEach((botao, index) => botao.addEventListener("click", (evento) => editarProduto(index, evento)));
-
- // function editar() {
-    //     console.log("edita");
-    //     const productCode = this.parentElement.parentElement.parentElement.querySelector('.');
-    //     console.log(productCode)
-    // }

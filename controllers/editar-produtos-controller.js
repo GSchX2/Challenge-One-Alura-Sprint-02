@@ -22,11 +22,15 @@ async function editarProdutoForm(evento) {
         descricao: formularioEditarProduto.elements['descricao-produto'].value
     }
 
-    try {
-        await productServicesAPI.editarProdutoAPI(produto);
-        window.location.href = "../views/menu-administrador.html";
-    } catch (error) {
-        alert(error);
+    if (produto.urlImagem.length > 0 && produto.categoria.length > 0 && produto.nome.length > 0 && produto.preco.length > 0) {
+        try {
+            await productServicesAPI.editarProdutoAPI(produto);
+            window.location.href = "../views/menu-administrador.html";
+        } catch (error) {
+            alert(error);
+        }
+    } else {
+        alert("Os campos requeridos devem ser preenchidos")
     }
 }
 
