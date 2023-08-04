@@ -8,5 +8,4 @@ Utilizando o [json-server](https://github.com/typicode/json-server) para criar a
 
 O site trata-se apenas da visuliazação dos produtos criados no banco de dados, assim como as partes em que se realização as operações CRUD que manipulam o banco de dados. Não foram integradas ao site criação de usuários e interações de compra de produtos ou estoque.
 
-Foi dado uma base do design do site em figma, o qual foi seguido como forma de treino ao interpretar o design do site e as interações das partes do site.
-[arquivo figma](https://www.figma.com/file/itJpWbvHxSUcUeMPy1lmof/AluraGeek?node-id=0%3A1)
+Foi dado uma base do design do site em [figma](https://www.figma.com/file/itJpWbvHxSUcUeMPy1lmof/AluraGeek?node-id=0%3A1), o qual foi seguido como forma de treino ao interpretar o design do site e as interações das partes do site.
