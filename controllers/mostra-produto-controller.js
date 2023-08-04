@@ -14,7 +14,7 @@ export default function mostrarItemProduto(produtoData) {
         <img class="produto__imagem" src="${produtoURL}" alt="produto" width="176" height="174">
         <p class="produto__nome">${produtoNome}</p>
         <p class="produto__preco">${produtoPrice}</p>
-        <a href="produto.html" class="produto__link">Ver Produto</a>
+        <a href="#" class="produto__link">Ver Produto</a>
         `;
 
     return produtoEl;
